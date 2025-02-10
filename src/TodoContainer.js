@@ -6,13 +6,8 @@ import TodoActions from "./TodoActions";
 const TodoContainer = (props) => {
   const {
     preferences,
-    addTodo,
     todos,
-    toggleTodo,
-    deleteTodo,
-    markAllComplete,
-    deleteAllCompleted,
-    deleteAllTodos,
+    actions,
   } = props;
 
   const containerStyles = {
@@ -26,19 +21,19 @@ const TodoContainer = (props) => {
 
   return (
     <div style={containerStyles}>
-      <TodoForm addTodo={addTodo} preferences={preferences} />
+      <TodoForm addTodo={actions.addTodo} preferences={preferences} />
       <TodoList
         preferences={preferences}
         todos={todos}
-        deleteTodo={deleteTodo}
-        toggleTodo={toggleTodo}
+        deleteTodo={actions.deleteTodo}
+        toggleTodo={actions.toggleTodo}
       />
 
       <TodoActions
         preferences={preferences}
-        markAllComplete={markAllComplete}
-        deleteAllTodos={deleteAllTodos}
-        deleteAllCompleted={deleteAllCompleted}
+        markAllComplete={actions.markAllComplete}
+        deleteAllTodos={actions.deleteAllTodos}
+        deleteAllCompleted={actions.deleteAllCompleted}
       />
     </div>
   );
