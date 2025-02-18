@@ -62,16 +62,6 @@ const App = () => {
     }));
   };
 
-  const actions = {
-    addTodo: addTodo,
-    deleteTodo: deleteTodo,
-    toggleTodo: toggleTodo,
-    markAllComplete: markAllComplete,
-    deleteAllCompleted: deleteAllCompleted,
-    deleteAllTodos: deleteAllTodos,
-    toggleDarkMode: toggleDarkMode,
-  }
-
   const appStyles = {
     backgroundColor: preferences.darkMode ? "#121212" : "#fff",
     color: preferences.darkMode ? "#fff" : "#000",
@@ -85,8 +75,15 @@ const App = () => {
       <TodoContainer
         preferences={preferences}
         todos={todos}
-        actions={actions}
-       />
+        addTodo={addTodo}
+        deleteTodo={deleteTodo}
+        toggleTodo={toggleTodo}
+        markAllComplete={markAllComplete}
+        deleteAllCompleted={deleteAllCompleted}
+        deleteAllTodos={deleteAllTodos}
+        toggleDarkMode={toggleDarkMode}
+      />
+
       <Footer preferences={preferences} todos={todos} />
     </div>
   );
